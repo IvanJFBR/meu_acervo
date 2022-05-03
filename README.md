@@ -9,7 +9,8 @@ Uma listagem apresentando filmes cadastrados com titulo e descrição
 
 ## Dados do Conteúdo
 
-Os dados são armazenados no local storage para que possam ser acessados offline
+Os dados são armazenados no local storage para que possam ser acessados offline.
+São armazenados dados sobre o filme referente a titulo e descrição.
 
 ## Checklist
 - A aplicação é original e não uma cópia da aplicação de um colega ou de uma aplicação já existente? - Sim
