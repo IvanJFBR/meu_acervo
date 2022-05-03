@@ -1,7 +1,7 @@
 import React from 'react';
-import './Header.css';
+import './style.css';
 
-const Header = (props) => {
+const Header = () => {
   return (
     <header className='header'>
       <h2>Acervo de Filmes</h2>

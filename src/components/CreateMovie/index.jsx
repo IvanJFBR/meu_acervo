@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Button from './Button';
-import './AddGuest.css';
+import Button from '../Button';
+import './style.css';
 
-const AddGuest = ({ handleAddMovie, changeScreen }) => {
+const CreateMovie = ({ handleAddMovie, changeScreen }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -26,15 +26,22 @@ const AddGuest = ({ handleAddMovie, changeScreen }) => {
     setDescription("");
   };
 
+  const handleCancel = () => {
+    changeScreen();
+
+    setTitle("");
+    setDescription("");
+  }
+
   return (
-    <div className='add-guest-container'>
+    <div className='add-movie-container'>
       <form onSubmit={handleCreateMovie}>
         <div className='field-wrapper'>
           <label>Title</label>
           <input
             onChange={handleTitle}
             value={title}
-            className='add-guest-input'
+            className='add-movie-input'
             type='text'
             required
           />
@@ -44,11 +51,12 @@ const AddGuest = ({ handleAddMovie, changeScreen }) => {
           <input
             onChange={handleDescription}
             value={description}
-            className='add-guest-input'
+            className='add-movie-input'
             type='text'
           />
         </div>
-        <div className='add-guest-button-container'>
+        <div className='add-movie-button-container'>
+          <Button type="button" onClick={handleCancel}>Cancelar</Button>
           <Button type="submit">Confirmar</Button>
         </div>
       </form>
@@ -56,4 +64,4 @@ const AddGuest = ({ handleAddMovie, changeScreen }) => {
   );
 };
 
-export default AddGuest;
+export default CreateMovie;

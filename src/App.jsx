@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
-import Teste from './components/Teste';
 import { v4 as uuidv4 } from 'uuid';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Header from './components/Header';
-import Guests from './components/Guests';
-import AddGuest from './components/AddGuest';
+import MovieList from './components/MovieList';
+import CreateMovie from './components/CreateMovie';
 import Add from './components/Add';
 
 import './App.css';
 
 const App = () => {
-	const [guests, setGuests] = useState(
-		JSON.parse(localStorage.getItem('guests')) ||
-			localStorage.setItem('guests', JSON.stringify([]))
+	const [movies, setMovies] = useState(
+		JSON.parse(localStorage.getItem('movies')) ||
+			localStorage.setItem('movies', JSON.stringify([]))
 	);
 
 
@@ -24,55 +22,49 @@ const App = () => {
 	}
 
 	const handleAddMovie = movie => {
-		const newGuests = [
-			...guests,
+		const newMovies = [
+			...movies,
 			{
 				...movie,
 				id: uuidv4()
 			}
 		];
-		setGuests(newGuests);
-		SaveGuests(newGuests);
+		setMovies(newMovies);
+		saveMovies(newMovies);
 	};
 
-	const handleguestDeletion = guestId => {
-		const newGuests = guests?.filter(guest => guest.id !== guestId);
+	const handleDelete = movieId => {
+		const newMovies = movies?.filter(movie => movie.id !== movieId);
 
-		setGuests(newGuests);
-		SaveGuests(newGuests);
+		setMovies(newMovies);
+		saveMovies(newMovies);
 	};
 
-	//filtro para o contador de presentes
-	function guestsFiltered() {
-		let filter = guests?.filter(guest => guest.confirmed === true);
-		return filter?.length;
-	}
-
-	const SaveGuests = newguests => {
-		localStorage.setItem('guests', JSON.stringify(newguests));
+	const saveMovies = newMovies => {
+		localStorage.setItem('movies', JSON.stringify(newMovies));
 	};
 
 	return (
 		<>
-			<Header
-				numberConfirmed={guestsFiltered()}
-				numberGuests={guests?.length}
-			/>
+			<Header/>
 			<div className="container">
 
-				<Add onClick={changeScreen}>{screenAdd ? 'Cancelar' : 'Adicionar'}</Add>
+				
 				{screenAdd && (
-					<AddGuest
+					<CreateMovie
 						handleAddMovie={handleAddMovie}
 						changeScreen={changeScreen}
 					/>
 				)}
 
 				{!screenAdd && (
-					<Guests
-						guests={guests}
-						handleguestDeletion={handleguestDeletion}
-					/>
+					<>
+						<Add onClick={changeScreen}>Adicionar</Add>
+						<MovieList
+							movies={movies}
+							onDelete={handleDelete}
+						/>
+					</>
 				)}
 			</div>
 		</>

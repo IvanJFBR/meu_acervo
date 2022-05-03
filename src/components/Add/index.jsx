@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Add.css';
+import './style.css';
 
 const Add = ({ children, onClick }) => {
   return (

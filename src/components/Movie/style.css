@@ -1,4 +1,4 @@
-.guest-container {
+.movie-container {
   background-color: #d8e4ec;
   margin: 8px 0;
   padding: 15px 20px;
@@ -10,15 +10,13 @@
   font-size: larger;
 }
 
-.guest-title {}
-
 .buttons-container {
   width: 30%;
   display: flex;
   justify-content: flex-end;
 }
 
-.remove-guest-button {
+.remove-movie-button {
   background-color: #d8e4ec;
   border: none;
   font-size: 24px;
