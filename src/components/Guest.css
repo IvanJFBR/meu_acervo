@@ -1,0 +1,29 @@
+.guest-container {
+  background-color: #d8e4ec;
+  margin: 8px 0;
+  padding: 15px 20px;
+  display: flex;
+  border-radius: 5px;
+  justify-content: space-between;
+  color: rgb(0, 0, 0);
+  align-items: center;
+  font-size: larger;
+}
+
+.guest-title {
+  cursor: pointer;
+}
+
+.buttons-container {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.remove-guest-button {
+  background-color: #d8e4ec;
+  border: none;
+  font-size: 24px;
+  color: #1d3a4e;
+  margin: 0 5px;
+}

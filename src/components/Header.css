@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  align-items: center;
+}
+
+h2 {
+  /* position: absolute; */
+  color: #eee;
+}
+
+.confirmeds {
+  background-color: #71aacf;
+  border-radius: 40px;
+  padding: 10px 15px;
+  margin-right: 100px;
+}
+
+.guests {
+  background-color: #d8e4ec;
+  border-radius: 40px;
+  padding: 10px 15px;
+  margin-right: 10px;
+  margin-left: 20px;
+}
