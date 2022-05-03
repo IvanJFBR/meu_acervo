@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from '../Button';
 import './style.css';
 
-const CreateMovie = ({ handleAddMovie, changeScreen }) => {
+const CreateMovie = ({ handleAddMovie, onChangeScreen }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -20,14 +20,14 @@ const CreateMovie = ({ handleAddMovie, changeScreen }) => {
       title, 
       description
     });
-    changeScreen();
+    onChangeScreen("list");
 
     setTitle("");
     setDescription("");
   };
 
   const handleCancel = () => {
-    changeScreen();
+    onChangeScreen("list");
 
     setTitle("");
     setDescription("");

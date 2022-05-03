@@ -1,5 +1,5 @@
 import React from 'react';
-import { CgClose } from "react-icons/cg";
+import { CgTrash } from "react-icons/cg";
 import './style.css';
 
 const Movie = ({ movie, onDelete }) => {
@@ -11,10 +11,14 @@ const Movie = ({ movie, onDelete }) => {
         <strong className='movie-title'>
           {movie.title}
         </strong>
-        <hr />
-        <div className='movie-title'>
-          {movie.description}
-        </div>
+        {movie.description && (
+          <>
+            <hr />
+            <div className='movie-title'>
+              {movie.description}
+            </div>
+          </>
+        )}
       </div>
       
       <div className='buttons-container'>
@@ -22,7 +26,7 @@ const Movie = ({ movie, onDelete }) => {
           className='remove-movie-button'
           onClick={() => onDelete(movie.id)}
         >
-          <CgClose />
+          <CgTrash />
         </button>
       </div>
     </div>

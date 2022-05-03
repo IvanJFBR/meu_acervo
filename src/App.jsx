@@ -15,10 +15,10 @@ const App = () => {
 	);
 
 
-	const [screenAdd, setScreenAdd] = useState(false);
+	const [currentScreen, setCurrentScreen] = useState("list");
 
-	function changeScreen() {
-		setScreenAdd(!screenAdd);
+	function handleChangeScreen(screenName) {
+		setCurrentScreen(screenName);
 	}
 
 	const handleAddMovie = movie => {
@@ -48,22 +48,19 @@ const App = () => {
 		<>
 			<Header/>
 			<div className="container">
-
-				
-				{screenAdd && (
+				{currentScreen === "create-movie" && (
 					<CreateMovie
 						handleAddMovie={handleAddMovie}
-						changeScreen={changeScreen}
+						onChangeScreen={handleChangeScreen}
 					/>
 				)}
-
-				{!screenAdd && (
+				{currentScreen === "list" && (
 					<>
-						<Add onClick={changeScreen}>Adicionar</Add>
 						<MovieList
 							movies={movies}
 							onDelete={handleDelete}
 						/>
+						<Add onClick={() => handleChangeScreen("create-movie")}>Adicionar</Add>
 					</>
 				)}
 			</div>
