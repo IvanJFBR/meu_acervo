@@ -1,23 +1,12 @@
-# Lista de convidados
+# Acervo de Filmes
 
-Um útil e simples aplicativo que lista qualquer dado com caracteres, ideal para montar uma lista de convidados, do qual você pode clicar e marcar como confirmado/presente.
+Uma listagem apresentando filmes cadastrados com titulo e descrição
 
 ### Telas
 
-- Na tela inicial, é exibido a lista e um botão para adicionar algum nome.
-- Na tela de adição, é possível registrar o nome do convidado ou cancelar
-- O cabeçalho nos dá informações de quantos convidados (circulo branco, e quantos confirmados/presentes)
+- Tela inicial - Listagem juntamente com o botão de adiconar.
+- Criação do item - Campos para titulo e descrição
 
-## Dados do usuário
+## Dados do Conteúdo
 
-Este aplicativo possui armazenamento em cache para que esses dados possam ser acessados offline
-
-## Requisitos
-- A aplicação é original e não uma cópia da aplicação de um colega ou de uma aplicação já existente?
-- A aplicação tem pelo menos duas interfaces (telas ou páginas) independentes?
-- A aplicação armazena e usa de forma relevante dados complexos do usuário?
-- A aplicação foi desenvolvida com o React?
-- A aplicação contém pelo menos dois componentes React além do componente principal?
-- O código da minha aplicação possui comentários explicando cada operação?
-- A aplicação está funcionando corretamente?
-- A aplicação está completa?
+Os dados são armazenados no local storage para que possam ser acessados offline
