@@ -37,7 +37,7 @@ const CreateMovie = ({ handleAddMovie, onChangeScreen }) => {
     <div className='add-movie-container'>
       <form onSubmit={handleCreateMovie}>
         <div className='field-wrapper'>
-          <label>Title</label>
+          <label>Título</label>
           <input
             onChange={handleTitle}
             value={title}
@@ -47,7 +47,7 @@ const CreateMovie = ({ handleAddMovie, onChangeScreen }) => {
           />
         </div>
         <div className='field-wrapper'>
-          <label>Description</label>
+          <label>Descrição</label>
           <input
             onChange={handleDescription}
             value={description}
