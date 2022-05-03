@@ -1,11 +1,11 @@
 .buttonAdd {
-  background-color: #71aacf;
+  background-color: var(--primary-color);
   height: 40px;
   padding: 0 10px;
   border-radius: 5px;
   width: 100%;
   font-size: 16px;
-  color: rgb(50, 49, 49);
+  color: rgb(255, 255, 255);
   font-weight: bold;
   cursor: pointer;
   border: none;
@@ -14,6 +14,6 @@
 }
 
 .buttonAdd:hover {
-  background-color: rgb(50, 49, 49);
-  color: #71aacf;
+  background-color: var(--primary-dark-color);
+  color: white;
 }

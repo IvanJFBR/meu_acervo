@@ -10,9 +10,7 @@
   font-size: larger;
 }
 
-.guest-title {
-  cursor: pointer;
-}
+.guest-title {}
 
 .buttons-container {
   width: 30%;
@@ -26,4 +24,9 @@
   font-size: 24px;
   color: #1d3a4e;
   margin: 0 5px;
+  cursor: pointer;
+}
+
+.content-item {
+  width: 100%;
 }

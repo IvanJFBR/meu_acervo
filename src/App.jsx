@@ -16,17 +16,6 @@ const App = () => {
 			localStorage.setItem('guests', JSON.stringify([]))
 	);
 
-	const handleguestClick = guestId => {
-		const newGuests = guests.map(guest => {
-			if (guest.id === guestId)
-				return { ...guest, confirmed: !guest.confirmed };
-
-			return guest;
-		});
-
-		setGuests(newGuests);
-		SaveGuests(newGuests);
-	};
 
 	const [screenAdd, setScreenAdd] = useState(false);
 
@@ -34,13 +23,12 @@ const App = () => {
 		setScreenAdd(!screenAdd);
 	}
 
-	const handleguestAddition = guestTitle => {
+	const handleAddMovie = movie => {
 		const newGuests = [
 			...guests,
 			{
-				title: guestTitle,
-				id: uuidv4(),
-				confirmed: false
+				...movie,
+				id: uuidv4()
 			}
 		];
 		setGuests(newGuests);
@@ -74,7 +62,7 @@ const App = () => {
 			<Add onClick={changeScreen}>{screenAdd ? 'Cancelar' : 'Adicionar'}</Add>
 			{screenAdd && (
 				<AddGuest
-					handleguestAddition={handleguestAddition}
+					handleAddMovie={handleAddMovie}
 					changeScreen={changeScreen}
 				/>
 			)}
@@ -82,7 +70,6 @@ const App = () => {
 			{!screenAdd && (
 				<Guests
 					guests={guests}
-					handleguestClick={handleguestClick}
 					handleguestDeletion={handleguestDeletion}
 				/>
 			)}

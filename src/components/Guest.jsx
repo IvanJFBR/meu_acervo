@@ -2,16 +2,21 @@ import React from 'react';
 import { CgClose } from "react-icons/cg";
 import './Guest.css';
 
-const Guest = ({ guest, handleguestClick, handleguestDeletion }) => {
+const Guest = ({ guest, handleguestDeletion }) => {
   return (
     <div
       className='guest-container'
-      style={guest.confirmed ? { borderLeft: '12px solid #71aacf' } : {}}
     >
-      <div className='guest-title' onClick={() => handleguestClick(guest.id)}>
-        {guest.title}
+      <div className='content-item'>
+        <strong className='guest-title'>
+          {guest.title}
+        </strong>
+        <hr />
+        <div className='guest-title'>
+          {guest.description}
+        </div>
       </div>
-
+      
       <div className='buttons-container'>
         <button
           className='remove-guest-button'
