@@ -53,27 +53,29 @@ const App = () => {
 	};
 
 	return (
-		<div className="container">
+		<>
 			<Header
 				numberConfirmed={guestsFiltered()}
 				numberGuests={guests?.length}
 			/>
+			<div className="container">
 
-			<Add onClick={changeScreen}>{screenAdd ? 'Cancelar' : 'Adicionar'}</Add>
-			{screenAdd && (
-				<AddGuest
-					handleAddMovie={handleAddMovie}
-					changeScreen={changeScreen}
-				/>
-			)}
+				<Add onClick={changeScreen}>{screenAdd ? 'Cancelar' : 'Adicionar'}</Add>
+				{screenAdd && (
+					<AddGuest
+						handleAddMovie={handleAddMovie}
+						changeScreen={changeScreen}
+					/>
+				)}
 
-			{!screenAdd && (
-				<Guests
-					guests={guests}
-					handleguestDeletion={handleguestDeletion}
-				/>
-			)}
-		</div>
+				{!screenAdd && (
+					<Guests
+						guests={guests}
+						handleguestDeletion={handleguestDeletion}
+					/>
+				)}
+			</div>
+		</>
 	);
 };
 
